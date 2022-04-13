@@ -43,6 +43,9 @@ Ctrl + / => 실습한 내용 보는 방법
 >* $ git add . => 현재 위치에 있는 모든 파일을 git에 추가한다
 >* $ git log --oneline => 변경사항을 한줄로 보고 싶어!
 >* q => 터미널 창에서 명령어 사용하는 창이 뜨지 않을 경우 사용
+>* $ git remote add origin (내 github 주소) => 내 깃허브의 주소를 추가해 주는 단계
+>* $ git remote -v => github의 주소를 확인하는 방법
+>* $ git remote rm origin => github의 주소를 삭제하는 방법
 
 ## Typora 실습
 # 제목
