@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱 구조</title>
+    <!-- 
+        header  : 제목, 로고, 아이콘...
+        nav     : 탐색링크 ...
+        section : 컨텐츠를 주제별로 묶고 싶을 경우...
+        article : 독립적으로 사용할 수 있는 내용을 정의
+        aside   : 광고, 메인과 상관없는 내용 정의
+        footer  : 저작권, 저자, 연락처...
+    -->
+    <!-- style의 type이 CSS관련된 텍스트라는 의미 -->
+    <!-- # : id값을 사용할때 사용함 -->
+    <!-- px : 고정값 / % : 부모의 크기에 따라 크기가 유동적 -->
+    <style type="text/css">
+        div{
+            border: 1px dashed red;
+            margin: 10px;
+        }
+        
+        #container{
+            height: 400px;
+        }
+
+        #left{
+            width: 60%;
+            height: 85%;
+            float: left;
+        }
+
+        #right{
+            width : 35%;
+            height: 85%;
+            float: right;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="header">
+        <h1>검색</h1>
+        <div>
+            <span><a href="html05_a.html">메뉴1</a></span>
+            <span><a href="html09_form01.html">메뉴2</a></span>
+            <span><a href="html04_img.html">메뉴3</a></span>
+            <span><a href="html10_form02.html">메뉴4</a></span>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="left">
+            <p>왼쪽 본문 내용</p>
+        </div>
+        <div id="right">
+            <p>오른쪽 본문 내용</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>copyright &copy; all rights reserved...</p>
+    </div>
+</body>
+</html>

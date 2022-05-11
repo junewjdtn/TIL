@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <!-- action : 어디로 넘겨줄지 정해주는 역할 / method : 어떻게 보내줄지 정해주는 역할 -->
+    <form action="html10_form02_res.html" method="get">
+        <fieldset style="width:300px; height:200;">
+            <legend>회원가입</legend>
+            <p>아이디 : <input type="text" name="id"></p>
+            <p>비밀번호: <input type="password" name="pw"></p>
+            <p>이메일 수신 여부
+                <input type="radio" name="radio" value="y"> Y &nbsp;
+                <input type="radio" name="radio" value="n"> N
+            </p>
+            <p>관심분야 
+                <input type="checkbox" name="cb1" value="html"> HTML &nbsp;
+                <input type="checkbox" name="cb2" value="css"> CSS &nbsp;
+                <input type="checkbox" name="cb3" value="javascript"> JS &nbsp;
+            </p>
+            <p>
+                <input type="submit" value="전송">
+                <input type="reset" value="취소">
+            </p>
+        </fieldset>
+    </form>
+    
+</body>
+</html>

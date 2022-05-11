@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블(table)</title>
+</head>
+<body>
+        <!-- 
+            <table>  : 기본적인 표를 생성.
+                <tr> : 표의 행을 나타내는 태그
+                <th> : 표의 제목 셀을 나타내는 태그
+                <td> : 표의 일반 셀을 나타내는 태그
+
+        -->
+    <h1>기본적인 표 만들기</h1>
+    <!-- border : 표 경계선의 두께를 설정 -->
+    <table border="1" style="width:300px;">
+        <caption>테이블 제목</caption>
+        <tr style="background-color: lightgray;">
+            <th>컬럼01</th>
+            <th>컬럼02</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>02</td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>04</td>
+        </tr>
+    </table>
+
+    <h2>주요 태그 사용</h2>
+    <table border="1">
+        <caption>테이블 제목</caption>
+        <colgroup>
+            <col width="100px">
+            <col width="200px">
+            <col width="300px">
+        </colgroup>
+        <!-- tfoot 태그 : 맨 밑(발)을 의미 -->
+        <tfoot>
+            <tr>
+                <td>f1</td>
+                <td>f2</td>
+                <td>f3</td>
+            </tr>
+        </tfoot>
+        <!-- thead 태그 : 맨 위(머리)를 의미 -->
+        <thead>
+            <tr>
+                <th>컬럼01</th>
+                <th>컬럼02</th>
+                <th>컬럼03</th>
+            </tr>
+        </thead>
+        <!-- tbody 태그 : 중간(몸통)을 의미-->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>테이블 셀 병합하기</h2>
+    <!-- colspan : 열(가로) 합치기
+         rowspan : 행(세로) 합치기
+    -->
+    <table border="1">
+        <thead style="background-color: pink;">
+            <tr>
+                <th>컬럼1</th>
+                <th>컬럼2</th>
+                <th>컬럼3</th>
+                <th>컬럼4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">1(세로(열)합치기)</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td colspan="2">6(가로(행)합치기)</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">가로 합치기</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br><br>
+    <h1>표의 행과 열 합치기</h1>
+    <h3>회원 정보</h3>
+    <table border="1">
+        <tr>
+            <td rowspan="2" colspan="2" width="130px" height="150px">사진</td>
+            <td width="80px">이름</td>
+            <td width="200px"></td>
+        </tr>
+        <tr>
+            <td>연락처</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="70px" height="50px">주소</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td height="100px">자기소개 </td>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
