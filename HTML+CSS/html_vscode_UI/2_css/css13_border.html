@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border</title>
+    <style>
+        .c1{
+            background-color: orange;
+        }
+        .c2{
+            background-color: aqua;
+        }
+        .c3{
+            background-color: blue;
+        }
+        .c4{
+            background-color: greenyellow;
+        }
+        li{
+            /* li 태그의 앞에 오는 표시를 바꿔 주는 속성 / 
+            ex) circle(o), disc(), none, decimal(숫자), lower-alpha, lower-roman */
+            list-style: circle;
+            width: 100px;
+            height: 70px;
+            float: left;
+            text-align: center;
+            padding-top: 30px;
+            /* radius : 반지름 값을 각각 따로따로 줄수 있음*/
+            border-radius: 100px 50px 100px 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li class="c1">A</li>
+        <li class="c2">B</li>
+        <li class="c3">C</li>
+        <li class="c4">D</li>
+    </ul>
+</body>
+</html>

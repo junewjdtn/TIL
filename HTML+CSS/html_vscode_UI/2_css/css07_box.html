@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box</title>
+    <style>
+        dl, dt, dd, p{
+            /* margin : 바깥 여백, padding : 안쪽 여백*/
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            width: 500px;
+            border: 3px navy double; 
+        }
+        dt{
+            background-color: skyblue;
+            text-align: center;
+            font-size: 30px;
+            /* 글자간 간격 */
+            letter-spacing: 15px;
+            padding: 15px;
+            border-bottom: 5px navy double;
+        }
+        dd{
+            padding: 10px;
+        }
+        .line{
+            border-bottom: 5px red dotted;
+        }
+
+    </style>
+</head>
+<body>
+    <dl class="box">
+        <dt>직장인 명언 모음</dt>
+        <dd class="line">
+            <h2>이창진</h2>
+            <p>여유는 잔고에서 오고 상냥함은 탄수화물과 당분에서 온다.</p>
+        </dd>
+        <dd>
+            <h2>김창진</h2>
+            <p>내일 할 수 있는 일을 오늘 할 필요는 없다.</p>
+        </dd>
+    </dl>
+</body>
+</html>

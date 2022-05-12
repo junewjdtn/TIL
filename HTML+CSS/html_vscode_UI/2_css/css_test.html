@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        .logo{
+            float: left;
+            padding-top: 28px;
+        }
+        .login{
+            float:right;
+        }
+        .header > h1{
+            float: left;
+            margin-left: 35%;
+        }
+        .menu{
+            clear: both;
+        }
+        .menu > ul{
+            list-style: none;
+        }
+        .menu > ul > li{
+            display: inline-block;
+            margin-right: 13%;
+        }
+        .content{
+            width: 100%;
+            height: 400px;
+            background-color: gray;
+        }
+        .footer{
+            width: 100%;
+            height: 80px;
+            background-color: aqua;
+            text-align: center;
+            padding-top: 3%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="http://edu.chosun.com/site/data/img_dir/2019/08/01/2019080102092_0.jpg" width="200px">
+        </div>
+        <h1>MYMain</h1>
+        <div class="login">
+            <form>
+                <table>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" name="id"></td>
+                    </tr>
+                    <tr>
+                        <td>패스워드</td>
+                        <td><input type="password" name="pw"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="로그인"><input type="reset" value="취소"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>메인</li>
+                <li>공지사항</li>
+                <li>자유게시판</li>
+                <li>갤러리</li>
+                <li>회원관리</li>
+                <li>채팅하기</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">content 내용</div>
+    <div class="footer">
+        <p>Copyrigt 1998-2019 multi Information Educational All Rigth Reserved</p>
+    </div>
+</body>
+</html>

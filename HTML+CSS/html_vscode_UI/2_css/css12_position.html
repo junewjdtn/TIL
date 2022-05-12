@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <!-- 
+        static      : 정적위치 (기본값)
+        relative    : 상대위치 (원래 있어야 할 위치가 기준점)
+        absolute    : 절대위치 (부모 태그에 position이 없으면 body가 부모이므로 body기준에 맞추고 
+                               부모 태그에 position이 설정 되어있으면 부모 태그가 기준이 된다.)
+        fixed       : 고정위치
+    -->
+    <style>
+        #box{
+            width: 550px;
+            border: 1px dotted red;
+            position: relative;
+        }
+        p{
+            width: 130px;
+            height: 100px;
+        }
+        .myred{
+            background-color: red;
+            position: relative;
+            top: 50px;
+            /* 위치 조정 (요소를 앞으로 나오게 설정해주는 속성 / 숫자가 크면 클수록 앞으로 나옴) */
+            z-index: 2;
+        }
+        .myblue{
+            background-color: blue;
+            position: absolute;
+            top: 30px;
+            left: 100px;
+        }
+        .mygreen{
+            background-color: green;
+            position: relative;
+            left: 30px;
+            top: -30px;
+        }
+        /* myred라는 태그에 마우스를 올려놓으면 */
+        /* hover : 사용자의 커서(마우스 포인터)가 요소 위에 올라가 있으면 선택 */
+        .myred:hover{
+            z-index: 100;
+        }
+        .myblue:hover{
+            z-index: 100;
+        }
+        .mygreen:hover{
+            z-index: 100;
+        }
+        #fixed{
+            text-align: center;
+            width: 100px;
+            height: 200px;
+            background-color: black;
+            color: white;
+            position: fixed;
+            right: 50px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p class="myred"></p>
+        <p class="myblue"></p>
+        <p class="mygreen"></p>
+    </div>
+    <div id="fixed">
+        fixed!
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

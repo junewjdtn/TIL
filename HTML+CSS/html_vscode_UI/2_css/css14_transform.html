@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transfrom</title>
+    <style>
+        .cls{
+            width: 200px;
+            height: 200px;
+            background: red;
+            color: white;
+            text-align: center;
+            /* 글씨가 잘리지 않게 나타나게 하는 속성 */
+            word-wrap: break-word;
+            font-size: 30pt;
+        }
+        .tlate{
+            /* 위치를 x, y 값을 정하여 요소를 옮기는 속성 */
+            transform: translate(50px, 50px);
+        }
+        .trotate{
+            /* 요소를 각도 값을 넣어 그 각도에 맞추어서 요소를 돌려버리는 속성 */
+            transform: rotate(70deg)
+        }
+        .tscale{
+            /* 요소의 크기를 바꾸어 주는 속성 / 기본 설정은 (1,1) */
+            transform: scale(0.5, 1);
+        }
+        #tran:hover{
+            width: 700px;
+            background: blue;
+            transform: translate(300px, 0px);
+        }
+        #tran{
+            /*  linear : 처음부터 끝까지 속도를 일정한 속도로 설정하겠다. */
+            /* 설정을 바꿔 속도를 지정해주는 속성 */
+            transition: width 0.5s, background 1.5s linear, transform 1.5s;
+        }
+        li{
+            width: 500px;
+            background: pink;
+            margin-bottom: 5px;
+            font-size: 30pt;
+            /* 글자 굵기 */
+            font-weight: bold;
+            /* background-color와 background와 같은 의미 처럼 */
+            /* list-style과 같은 개념임 */
+            list-style-type: none;
+        }
+        li:hover{
+            width: 800px;
+            color: white;
+            letter-spacing: 5px;
+            transition: width 0.75s, color 0.75s, letter-spacing 0.75s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>transform - translate</h2>
+    <div class="cls tlate">translate(x,y) : 위치 이동</div>
+    <br><br>
+    <h2>transform - rotate</h2>
+    <div class="cls trotate">rotate(deg) : 회전</div>
+    <br><br>
+    <h2>transform - scale</h2>
+    <div class="cls tscale">sclae(x,y) : 크기</div>
+    <br><br>
+    <h2>transition 속성 전환</h2>
+    <div id="tran" class="cls">transition</div>
+    <br><br>
+    <div>
+        <h2>MainMenu</h2>
+        <ul>
+            <li>COMPANY</li>
+            <li>PRODUCT</li>
+            <li>SERVICE</li>
+            <li>COMMUNITY</li>
+            <li>CUSTOMER SUPPORT</li>
+        </ul>
+    </div>
+    <br><br><br>
+</body>
+</html>
