@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단락</title>
+    <style>
+        div{
+            text-align: center;
+            /*
+            capitalize : 단어의 첫번째 글자를 대문자로 바꿉니다.
+            uppercase : 모든 글자를 대문자로 바꿉니다.
+            lowercase : 모든 글자를 소문자로 바꿉니다.*/
+            text-transform: lowercase;
+            letter-spacing: 5px; /* 글자간 간격 */
+            font-size: 2em;
+        }
+
+        p{
+            /* 들여쓰기 공간 설정 */
+            text-indent: 40px;
+        }
+
+        #one{
+            /* text에 줄을 그어줌 */
+            text-decoration: overline;
+        }
+
+        #two{
+            text-align: right;
+        }
+        /* cursor : 마우스를 올려놓으면 마우스 모양이 달라짐 
+           text-decoration: none; : 밑줄 삭제
+        */
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>LGD, 기존 보다 2배 밝은 대형 OLED 개발</h1>
+        <p><b>전자신문etnews</b> | 박소라기자</p>
+    </div>
+    <p id="one">
+        LG디스플레이가 세계 최초로 볼록 렌즈 기술로 기존 TV보다 2배 밝은 대형 <q>유기발광다이오드(OLED)</q>를 개발했다. 
+        지난해 말 공개한 유기발광 소자에 중(重)수소 기술과 개인화 알고리즘을 적용한 올레드이엑스(OLED.EX) 
+        패널에서 한 단계 더 진보를 이뤄 냈다.
+    </p>
+    <p id="two">
+        이 기술은 패널 내부에 미세한 볼록 렌즈 배열층을 형성하는 것이 특징이다. 실제 렌즈를 물리적으로 부착하는 것은 아니다.  <br>
+        렌즈 재료 물질을 증착 과정을 거쳐 아주 얇게 OLED에 올리고 패터닝해서 올록볼록한 렌즈 모양으로 만든다.  <br>
+        렌즈 배열층이 OLED 패널 내부에서 손실되는 빛의 각도를 조절하고, 이를 증폭시켜서 광효율을 높인다.  <br>
+        패널 내부에서 반사되는 빛을 화면 쪽으로 나아가도록 빛의 경로를 조절하는 방식이다. <br>
+        <br>
+        LG는 이 기술을 '메타릿 렌즈 어레이(MLA; Meta-lit Lens Array)'라고 부른다.  <br>
+        MLA 기술을 적용하면 OLED 발광효율이 기존 대비 20% 이상 높아진다. 광원 산란 효과로 시야각도 넓어진다.  <br>
+        옆에서 봐도 밝고 선명한 화면을 구현한다. 휘도는 최대 2000니트에 이른다.  <br>
+        기존 LG 대형 OLED 최대 휘도가 대략 1000니트인 점을 감안하면 이 기술로 OLED 화면 밝기가 상당히 밝아진다. <br>
+        <br>
+        LG디스플레이는 10일(현지시간) 사흘 일정으로 미국 캘리포니아 새너제이에서 열린  <br>
+        국제정보디스플레이학회(SID) 2022에서 MLA 기술을 적용한 77인치 8K OLED TV 패널을 처음 공개했다. <br>
+    </p>
+    <p>
+        <img alt="LGD 사진" src="https://img.etnews.com/photonews/2205/1530529_20220511163049_947_0001.jpg">
+    </p>
+</body>
+</html>
