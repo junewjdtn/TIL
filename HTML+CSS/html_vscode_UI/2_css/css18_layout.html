@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>
+        .wrapper{
+            width: 90%; /* 부모 -> body */
+            text-align: center;
+            /* margin: 0 auto => 자동으로 설정해줌 */
+            margin: 0 auto;
+        }
+
+        .header{
+            width: 100%; /* 부모 -> .wrapper */
+            height: 80px;
+            background-color: hotpink;
+        }
+
+        .contents{
+            float: left;
+            width: 70%; /* 부모 -> .wrapper */
+            height: 400px;
+            background-color: aqua;
+        }
+
+        .aside{
+            float: right;
+            width: 30%; /* 부모 -> .wrapper */
+            height: 400px;
+            background-color: beige;
+        }
+
+        .footer{
+            clear: both;
+            width: 100%;
+            height: 80px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            Header
+        </div>
+        <div class="contents">
+            Main
+        </div>
+        <div class="aside">
+            aside
+        </div>
+        <div class="footer">
+            footer
+        </div>
+    </div>
+</body>
+</html>

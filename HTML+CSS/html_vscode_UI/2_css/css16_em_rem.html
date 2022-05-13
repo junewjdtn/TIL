@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>em, rem (크기 단위)</title>
+    <!-- 
+         px : 고정단위
+         em : 부모요소 text 크기 (상대적으로 따라감)
+         rem: 루트요소 text 크기 (상대적으로 따라감)
+         %  : 부모요소 text 크기
+    -->
+    <style>
+        #parent{
+            font-size: 24px;
+        }
+        #child{
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+            font-size: 2rem;
+            /* margin, padding은 em을 줄 경우 본인의 font-size를 따라감 */
+            padding: 1rem;
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div>test</div>
+        <div id="child">em&rem 연습</div>
+    </div>
+</body>
+</html>

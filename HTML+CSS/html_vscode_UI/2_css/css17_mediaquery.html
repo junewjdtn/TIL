@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mediaquery</title>
+    <style>
+        img{
+            width: 200px;
+        }
+        /* min-width: 700px (width값이 최소 700px)이상일때 img의 width 값을 400px로 바꿔라 */
+        /* max-width: 700px (width값이 최대 700px)이하일때 img의 width 값을 400px로 바꿔라 */
+        @media screen and (min-width:700px){
+            img{
+                width: 400px;
+            }
+        }
+        @media screen and (min-width: 1024px){
+            img{
+                width: 600px;
+                /* 투명도 */
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        mediaquery : 미디어 타입 + 조건
+     -->
+     <img src="../1_html/image/img01.png">
+</body>
+</html>
