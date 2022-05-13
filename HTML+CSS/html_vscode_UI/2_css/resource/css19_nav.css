@@ -1,0 +1,48 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.nav_wrapper{
+    /* width와 height의 최소 값을 말함 */
+    /* '최소 150px의 width만큼 잡고 있어야 된다' 라는 의미 */
+    min-width: 120px;
+    /* '최소 100vh의 height만큼 잡고 있어야 된다' 라는 의미 */
+    /* vh : 페이지의 크기만큼 설정해주는 의미 */
+    min-height: 100vh;
+    list-style-type: none;
+    padding-top: 74px;
+}
+
+.nav_wrapper > li > div{
+    padding: 5px;
+}
+
+.nav_icon{
+    font-size: 1.4rem;
+}
+
+.nav_menu{
+    font-size: 1.1rem;
+}
+
+ul > li > div:hover{
+    cursor: pointer;
+    background-color: lightgray;
+    color: white;
+    width: 90px
+}
+
+@media screen and (max-width: 1000px){
+    .nav_menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .nav_wrapper{
+        display: none;
+    }
+}

@@ -1,0 +1,101 @@
+.header{
+    /* 고정 */
+    position: fixed;
+    /* 위쪽으로 고정 */
+    top: 0;
+    /* 왼쪽으로 고정 */
+    left: 0;
+    /* 그림자 */
+    /* box-shadow : x축, y축 z축 색상 */
+    box-shadow: 0 0 3px black;
+    width: 100%;
+    z-index: 10;
+    background-color: white;
+}
+
+.header_wrapper{
+    height: 50px;
+    /* flex 한줄로 정렬(1차원적으로 정렬)  */
+    display: flex;
+    /* display: flex; 일 경우에 justify-content와 align-items를 사용 가능 */
+    /* justify-content : 가로축을 일정한 간격으로 공간을 띄워주는 속성 */
+    /* space-between : 양쪽 끝으로 늘리는 속성 */
+    justify-content: space-between;
+    /* 세로축 정렬 */
+    align-items: center;
+}
+
+.header_left{
+    height: 35px;
+    line-height: 35px;
+}
+
+.header_menu{
+    border: none;
+    background-color: white;
+    font-size: 1.5rem;
+    /* 화면을 줄이게 되면 보여지게 만들기 위해 기본적으로 숨겨놓음 */
+    display: none;
+}
+
+.header_title{
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
+.header_center{
+    width: 50%;
+}
+
+.header_form{
+    display: flex;
+    max-width: 100%; /* .header_center의 크기만큼 max-width를 사용하겠다. */
+}
+
+.header_input_text{
+    /* 값을 사용할 때 각 값에 띄어쓰기를 해 주어야 한다 */
+    width: calc(100% - 70px); /* 전체 100%에서 70px 뺀 값을 width를 사용하겠다 */
+    height: 25px;
+    border-right: none;
+}
+
+.header_input_button{
+    width: 70px;
+    border-left: none;
+    background-color: rgb(247, 247, 247);
+}
+
+.header_right{
+    display: flex;
+    margin-right: 10px;
+}
+
+.header_search{
+    border: none;
+    background-color: transparent; /* transparent : 투명하게 */
+    font-size: 1.3rem;
+    display: none;
+}
+
+.header_img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url(../../1_html/image/img01.png);
+    background-size: 30px 30px;
+}
+/* width값이 500이하일 때는 mediaquery에 작성한 내용대로 사용 */
+@media screen and (max-width: 500px){
+    .header_search{
+        display: block;
+    }
+    .header_menu{
+        display: block;
+    }
+    .header_center{
+        display: none;
+    }
+    .header_title{
+        display: none;
+    }
+}
