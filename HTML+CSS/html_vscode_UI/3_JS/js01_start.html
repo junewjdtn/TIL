@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start</title>
+    <script src="js/js01_test.js"></script>
+    <script>
+        function embeddedTest(){
+            var doc = document.getElementsByTagName("li")[1];
+            doc.style.color="red";
+            doc.innerHTML = "<b>글자가 바뀝니다.</b>";
+        }
+    </script>
+</head>
+<body>
+    <h1>자바스크립트 작성방식 3가지</h1>
+    <ol>
+        <!-- 한번 클릭하면 클릭이벤트가 실행되면서 경고창이 뜨면서 'inline'이 뜨는 것을 볼 수 있음 -->
+        <li onclick="alert('inline');">inline 방식 (태그안에 사용)</li>
+        <li onclick="embeddedTest();">내부 작성 방식(embedded)</li>
+        <li onclick="test();">외부 작성 방식</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+    <script type="text/javascript">
+        // var는 값을 선언(var test1=1;)(초기화)전에 console창에 출력하면 undefined를 출력함 (문제가 발생하지 않는다.)
+        console.log(test1);
+        var test1=1;
+        console.log(test1); 
+
+        // let은 값을 선언(let test2=2;)(초기화)전에 console창에 출력하면 error가 일어남 (문제가 발생)
+        // console.log(test2);
+        let test2=2;
+        console.log(test2);
+
+        // const는 상수의 줄임말로 선언을 하게되면 무조건 초기화를 해주어야 사용가능하다.
+        // const는 상수이므로 중간에 변수 값을 바꿀수 없다.
+        const test3=3;
+        console.log(test3);
+        // test3=33;
+        // confsole.log(test3);
+
+        // { }블럭은 { }블럭 안에서만 사용가능
+        // var는 { }블럭 안에서 변수를 선언해도 { }블럭 밖에서 사용 가능하다
+        {
+            var no=10;
+            let no2=20;
+            const no3=30;
+
+            console.log(no);
+            console.log(no2);
+            console.log(no3);
+        }
+
+        console.log(no);
+        // console.log(no2);
+        // console.log(no3);
+
+        // 변수 타입(var, let, const)를 선언하지 않아도 변수를 사용 가능하다.
+        console.log('==========');
+        num=10;
+        console.log(num);
+
+        // 전역변수
+        let variable=10;
+        function test01(){
+            variable = variable+5;
+            // id="vo1"이라는 태그를 선택하여 innerHTML을 통해 내부에 텍스트를 넣겠다.
+            document.getElementById("v01").innerHTML = "<b style='color:red;background:yellow;'>"+variable+"</b>"
+        }
+        function test02(){
+            const variable2 = variable+100;
+            document.getElementById("v02").innerHTML = "<b>"+variable2+"</b>";
+        }
+
+    </script>
+</head>
+<body>
+    <h1>변수의 사용</h1>
+    <dl>
+        <dt>선언 규칙</dt>
+        <dd>1. 대소문자 구분.</dd>
+        <dd>2. 영문, &, _로 시작해야 한다.</dd>
+        <dd>3. 영문, &, _, 숫자들을 포함할 수 있다.</dd>
+        <dd>4. 키워드나 예약어를 사용할 수 없다.</dd>
+
+        <dt>범위</dt>
+        <dd>1. 전역변수
+            <button onclick="test01();">확인</button>
+        </dd>
+        <dd id="v01"> </dd>
+        <dd>2. 지역변수
+            <button onclick="test02();">확인</button>
+        </dd>
+        <dd id="v02"></dd>
+    </dl>
+</body>
+</html>
