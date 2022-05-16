@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rolling</title>
+    <style>
+        #gallery{
+            width: 200px;
+            height: 250px;
+            vertical-align: middle;
+        }
+        a{
+            font-size: 20pt;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        let num = 1;
+
+        function nextGallery(){
+            num++;
+            if(num>4){
+                num=1;
+            }
+            // document 문서 안에 "gallery"라는 요소의 아이디 값을 가져와 src를 "./image/img0"+num+".png"로 바꾸겠다.
+            document.getElementById("gallery").src = "./image/img0"+num+".png";    
+            return false;  // a태그의 기본적 설정인 새로고침을 멈추기(이벤트를 멈추기) 위해 return false를 사용
+        }
+        function prevGallery(){
+            num--;
+            if(num<1){
+                num=4;
+            }
+            document.getElementById("gallery").src = "./image/img0"+num+".png";
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div id="galleryWrap">
+        <p>
+            <a onclick="return prevGallery();" href="">◀</a>
+            &nbsp;&nbsp;<img src="./image/img01.png" id="gallery">&nbsp;&nbsp;
+            <!-- a태그의 기본적 설정인 새로고침을 멈추기 위해 return을 사용 -->
+            <a onclick="return nextGallery();" href="">▶</a>
+        </p>
+    </div>
+</body>
+</html>

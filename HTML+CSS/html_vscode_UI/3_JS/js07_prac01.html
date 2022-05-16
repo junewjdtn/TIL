@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <style>
+        #area{
+            width: 400px;
+            height: 200px;
+            background-color: lightgoldenrodyellow;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function printVal(){
+            // document안에 태그이름이 'input' 중에서 인덱스가 0번인 요소의 value 값을 가져와 변수 userName에 저장 
+            let userName = document.getElementsByTagName("input")[0].value;
+            // document안에 아이디가 'pname'인 요소의 value 값을 가져와 변수 productName에 저장
+            let productName = document.getElementById("pname").value;
+            // document안에 요소 이름이 'price'중에서 인덱스가 0번인 value 값을 가져와 변수 price에 저장
+            let price = document.getElementsByName("price")[0].value;
+            const area = document.getElementById("area");
+            // 기존에 있던 내용을 추가하자
+            area.innerHTML += "구입자 : " + userName + "님<br>"; 
+            area.innerHTML += "상품명 : " + productName + "<br>";
+            area.innerHTML += "구매가격 : " + price + "만원";
+        }
+    </script>
+
+</head>
+<body>
+    <h2>연습 1</h2>
+    구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요.">
+    <br><br>
+    상품명 : <input type="text" id="pname" placeholder="구매 상품명을 입력하세요.">
+    <br><br>
+    가  격 : <input type="text" name="price" placeholder="구매 가격을 입력하세요.">
+    <br><br>
+    <button onclick="printVal();">입력값 출력하기</button>
+    <br><br>
+    <div id="area"></div>
+</body>
+</html>
