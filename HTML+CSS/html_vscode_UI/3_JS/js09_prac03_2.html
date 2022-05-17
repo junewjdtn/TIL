@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice3</title>
+    <style>
+        fieldset{
+            width: 500px;
+            height: 50px;
+            background-color: lightgray;
+            text-align: center;
+            font-size: 15pt;
+        }
+        div{
+            width: 700px;
+            height: 60px;
+            background-color: orange;
+            font-size: 16pt;
+            padding: 10px;
+            margin: 10px;
+        }
+        #titleBox{
+            display: none;
+        }
+        #dateBox{
+            display: none;
+        }
+        #writerBox{
+            display: none;
+        }
+        div > input{
+            font-size: 17px;
+        }
+        div > button{
+            font-size: 17px;
+        }
+    </style>
+    <script>
+        function check1(){
+            let titleBox = document.getElementById("titleBox");
+            let dateBox = document.getElementById("dateBox");
+            let writerBox = document.getElementById("writerBox");
+
+            titleBox.style.display = 'block';
+            dateBox.style.display = 'none';
+            writerBox.style.display = 'none';
+        }
+        function check2(){
+            let titleBox = document.getElementById("titleBox");
+            let dateBox = document.getElementById("dateBox");
+            let writerBox = document.getElementById("writerBox");
+
+            titleBox.style.display = 'none';
+            dateBox.style.display = 'block';
+            writerBox.style.display = 'none';
+        }
+        function check3(){
+            let titleBox = document.getElementById("titleBox");
+            let dateBox = document.getElementById("dateBox");
+            let writerBox = document.getElementById("writerBox");
+
+            titleBox.style.display = 'none';
+            dateBox.style.display = 'none';
+            writerBox.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h2>연습 2</h2>
+    <fieldset>
+        <legend>검색할 항목을 선택하세요.</legend>
+        <input onclick="check1();" type="radio" name="select" id="title"><label for="title">제목</label>&nbsp;&nbsp;&nbsp;
+        <input onclick="check2();" type="radio" name="select" id="date"> <label for="date">날짜</label>&nbsp;&nbsp;&nbsp;
+        <input onclick="check3();" type="radio" name="select" id="writer"> <label for="writer">작성자</label>
+    </fieldset>
+    <hr>
+    
+    <!-- hidden 속성 사용 -->
+    <div id="titleBox">
+        <!-- 제목 영역 -->
+        검색할 제목을 입력하세요 :<br>
+        <input type="text" size="50">&nbsp;&nbsp;
+        <button>검색</button>
+    </div>
+
+    <div id="dateBox">
+        <!-- 날짜 영역 -->
+        검색할 날짜를 선택하세요 :<br>
+        <input type="date">&nbsp;-&nbsp;<input type="date">&nbsp;&nbsp;
+        <button>검색</button>
+
+    </div>
+
+    <div id="writerBox">
+        <!-- 작성자 영역 -->
+        검색할 작성자 아이디를 입력하세요 :<br>
+        <input type="text" size="25">&nbsp;&nbsp;
+        <button>검색</button>
+    </div>
+</body>
+</html>

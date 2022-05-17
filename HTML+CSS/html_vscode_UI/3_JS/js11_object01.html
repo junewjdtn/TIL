@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object01</title>
+    <script>
+        // 객체 작성1 (생성자 함수)
+        function myClass504(){
+            this.name = "멀티캠퍼스";   // this 키워드를 사용하면 외부에서 접근 가능
+            let name02 = "504강의장";   // 외부에서 접근 불가능
+            this.getName02=function(){
+                return name02;
+            }
+        }
+
+        // 객체 작성2 (가장 많이 사용)
+        const myClass504_2 = {
+            name:"멀티켐퍼스",
+            print:function(){
+                alert(myClass504_2.name + " : print");
+            }
+        }
+
+        // 프로토타입
+        myClass504.prototype.printName=function(){
+            let abc = "메롱";
+            alert(this.name + ", " + this.getName02() + " : prototype " + abc);
+        }
+
+        function objTest(){
+            // 객체 생성
+            let cls = new myClass504();    
+
+            console.log(cls.name);
+            console.log(cls.name02);
+            console.log(cls.getName02());
+            console.log('============');
+
+            // let cls2 = new myClass504_2().name;
+            // console.log(cls2);
+            alert(myClass504_2.name);
+            myClass504_2.print();
+
+            cls.printName();
+
+        }
+    </script>
+</head>
+<body>
+    <h1>객체</h1>
+    <p>관련된 데이터와 함수의 집합.</p>
+    <p>구성 : 함수(function), 속성(값), this, 프로토타입</p>
+    <p>키값을 사용하여 속성을 식별한다.</p>
+    <button onclick="objTest();">객체</button>
+</body>
+</html>

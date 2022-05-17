@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>transObj</title>
+    <style>
+        .area1{
+            border: 1px solid red;
+            height: 200px;
+            overflow: scroll;
+        }
+    </style>
+    <script>
+        function test1(){
+            let doc = document.getElementById("area1");
+
+            let test = 7+7;
+            doc.innerHTML += '7 + 7 = ' + test + '<br>';
+            // string 타입이 있으면 스크립트가 알아서 int타입의 숫자를 문자로 바꾸어 문자끼리 붙여 놓음
+            test = 7 + "7";
+            doc.innerHTML += '7 + "7" = ' + test + "<br>";
+
+            test = 7 + 7 + "7";
+            doc.innerHTML += '7 + 7 + "7" = ' + test + "<br>";
+        }
+        const numTest = val =>{
+            console.log(val + ": " + typeof(val)); // input의 type이 'text'이기 때문에 당연히 string 타입으로 나옴
+
+            // Number()를 사용하여 타입을 string에서 number로 바꾸어주는 설정
+            // parseInt()는 무조건 정수로만 나타내어 number로 바꾸어줌 (소수점을 사용하면 정수만 나타냄)
+            let vals = Number(val);
+            console.log(vals + ": " + typeof(vals));
+            // ' `${}` '를 사용하면 입력한 그대로 나옴 | 값을 넣을때 '${}'안에 넣으면 됨
+            console.log(`${vals} : ${typeof(vals)}`);
+        }
+
+        function intTest(val){
+            let vals = Number.parseInt(val) + 15;
+            console.log(`${vals} : ${typeof(vals)}`);
+        }
+
+        function floatTest(val){
+            let vals = parseFloat(val) + 15;
+            console.log(`${vals} : ${typeof(vals)}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>데이터의 형변환</h1>
+    <h3>문자와 숫자의 '+' 연산</h3>
+    <button onclick="test1();">클릭</button>
+    <div id="area1" class="area1"></div>
+    <hr>
+    <h3>숫자형 형변환 number() 함수</h3>
+    <p>문자형의 정수/실수를 숫자형으로 변환시켜준다.</p>
+    <input type="text" id="num">
+    <!-- numTest(num.value); : id가 num인 value값을 numTest()함수에 넘겨주겠다.  -->
+    <button onclick="numTest(num.value);">확인</button>
+    <hr>
+    <!-- 숫자형태의 숫자를 정수로 변환 -->
+    <h3>정수형 형변환 parseInt()</h3>
+    <!-- 숫자형태의 숫자를 실수로 변환 -->
+    <h3>실수형 형변환 parseFloat()</h3>
+    <input type="text" id="no">
+    <button onclick="intTest(no.value);">정수형</button>
+    <button onclick="floatTest(no.value);">실수형</button>
+</body>
+</html>
