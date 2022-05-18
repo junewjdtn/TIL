@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window03</title>
+<script type="text/javascript">
+	let ids = ["mulit", "java", "script", "jslim", "ljs", "rrhak"];
+	
+	function confirmChk(){
+		let id = document.getElementsByName("id")[0].value;	
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>I D</td>
+			<td><input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="중복확인" onclick="confirmChk();">
+				<input type="button" value="취소" onclick="">
+			</td>
+		</tr>
+	</table>
+	<div id="msg"></div>
+</body>
+</html>

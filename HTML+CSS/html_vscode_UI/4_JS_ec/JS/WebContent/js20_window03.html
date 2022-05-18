@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window03</title>
+<script type="text/javascript">
+	let ids = ["mulit", "java", "script", "jslim", "ljs", "rrhak"];
+	
+	function confirmChk(){
+		let id = document.getElementsByName("id")[0].value;
+		
+		let div = document.getElementById("msg");
+		
+		if(ids.indexOf(id) != -1){
+			div.innerHTML = "<b>아이디가 존재합니다.</b>";
+		}else{
+			let userId = "사용할 수 있는 아이디입니다. " + " <input type='button' value='확인' onclick='insertId(\""+id+"\");'>";
+			div.innerHTML = userId;
+		}
+	}
+	function insertId(id){
+		opener.document.getElementsByName("id")[0].value=id;
+		// focus() : 포커스를 pw에 맞추어 준다.
+		opener.document.getElementsByName("pw")[0].focus();
+		window.close();
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>I D</td>
+			<td><input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="중복확인" onclick="confirmChk();">
+				<!-- self.close(); : 취소버튼을 눌렀을때 창이 닫힌다. -->
+				<input type="button" value="취소" onclick="self.close();">
+			</td>
+		</tr>
+	</table>
+	<div id="msg"></div>
+</body>
+</html>
