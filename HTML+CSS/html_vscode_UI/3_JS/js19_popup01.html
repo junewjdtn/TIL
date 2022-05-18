@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup01</title>
+    <script>
+        function popUp(){
+            // open('url', 'name', 'specs');
+            // open : 지정해준 url을 따라 창을 열어줌
+            // "_self" : 현재 창에서 띄워줌
+            // "_blank" : 팝업 창을 띄워줌
+            // top, left 를 사용하여 팝업창의 위치를 정해줄수 있음
+            window.open("js19_popup02.html", "_blank", "width=500px, height=500px, top=250px, left=750px");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="popUp();">팝업!</button>
+</body>
+</html>

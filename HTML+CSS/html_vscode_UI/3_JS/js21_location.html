@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <script>
+        let locTest = ()=>{
+            // 페이지 이동 방법
+            // [1]
+            // location.href="https://www.daum.net";
+
+            // [2]
+            // href는 변수라 볼 수 있고 assign은 함수로 볼 수 있다.
+            // location.assign("https://www.naver.com");
+
+            // [3]
+            // replace는 페이지 이동을 하는것은 href와 assign과 같으나 
+            // 이전에 했던 이력을 남기지 않음(뒤로가기가 되지 않음)
+            // location.replace("https://www.google.com");
+
+            // 페이지 새로고침
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    <h1>Location</h1>
+    <p>url과 관련된 객체</p>
+
+    <a href="https://www.google.com">구글로 이동</a>
+    <button onclick="locTest();">클릭</button>
+</body>
+</html>

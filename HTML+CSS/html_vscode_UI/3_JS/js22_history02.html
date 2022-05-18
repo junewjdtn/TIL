@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history02</title>
+    <script>
+        function test1(){
+            // history.back() : 뒤로가기 (이전 페이지)
+            // window.history.back();
+
+            // history.go() : 앞으로가기 (다음 페이지)
+            // history.go(-1) 는 -1로 처리를 했기 때문에 뒤로감
+            history.go(-1);
+        }
+    </script>
+</head>
+<body>
+    <h1>history02</h1>
+    <button onclick="test1();">클릭</button>
+</body>
+</html>
