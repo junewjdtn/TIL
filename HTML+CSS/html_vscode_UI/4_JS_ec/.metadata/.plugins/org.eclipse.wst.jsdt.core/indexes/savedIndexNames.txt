@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+D:\. 멀티캠퍼스\[16회차] AI플랫폼을 활용한 웹서비스 개발_HTML\html_vscode_UI\4_JS_ec\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4005309372.index
-1645455623.index
-3906939959.index
-4143892283.index
-2918187088.index
-288373682.index
-3984004684.index
