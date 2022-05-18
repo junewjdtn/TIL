@@ -1,5 +1,8 @@
 # TIL (Today I Learned)
-- 오늘 공부한 내용을 남깁니다.
+##### 오늘 공부한 내용을 남깁니다.
+
+- [Java_md](https://github.com/junewjdtn/TIL/tree/master/TIL_md/Java)
+- [JavaScript_md](https://github.com/junewjdtn/TIL/tree/master/TIL_md/JS)
 
 # 내용정리
 
