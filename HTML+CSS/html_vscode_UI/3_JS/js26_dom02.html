@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom(Document Object Model)02</title>
+    <script>
+        function eleCreate(){
+            // <div></div> 생성
+            let div = document.createElement("div");
+            console.log(div);
+
+            let txt = document.createTextNode("Element 생성 메소드");
+            // <div>Element 생성 메소드</div>
+            div.appendChild(txt);
+
+            // [1]
+            // createAttribute : 속성 추가하기(만들기)
+            let attr = document.createAttribute("style");   // style=""
+            attr.nodeValue = "border:2px solid blue";       // style="border:2px solid blue"
+
+            // setAttributeNode : 만들어준 style을 'div'에 넣어준다
+            div.setAttributeNode(attr);   // <div style="border:2px solid blue">Element 생성 메소드</div>
+            
+            // [2]
+            // setAttribute("1", "2") : "1" = 속성 | "2" = 속성 값
+            div.setAttribute("id", "test");  //<div style="border:2px solid blue" id="test">Element 생성 메소드</div>
+            document.body.appendChild(div);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="eleCreate();">생성</button>
+</body>
+</html>

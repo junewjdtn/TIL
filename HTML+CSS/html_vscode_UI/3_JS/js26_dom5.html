@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom(Document Object Model)05</title>
+    <style>
+        p{
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        let cnt1 = 0;
+        let cnt2 = 0;
+        function addAppend(){
+            cnt1++;
+            let fieldset = document.getElementById("addele");
+            let p = document.createElement("p");
+
+            // [1]
+            // let txt = document.createTextNode("자식태그들 중 마지막에 붙여 넣는다. " + cnt);
+            // p.appendChild(txt);
+
+            // [2]
+            // textContent : 텍스트 넣기
+            p.textContent = "자식태그들 중 마지막에 붙여 넣는다. " + cnt1;
+
+            fieldset.appendChild(p);
+        }
+        function addBefore(){
+            cnt2++;
+            let fieldset = document.getElementById("addele");
+            let p = document.createElement("p");
+
+            p.textContent = "엘리먼트의 앞에 붙여 넣는다. " + cnt2;
+
+            let div = document.querySelector("fieldset > div");
+            // insertBefore(p, div) : 'p'태그를 'div' 앞에 붙여 넣겠다.
+            fieldset.insertBefore(p, div);
+        }
+        function moveEle(){
+            // children : 해당하는 자식의 태그들을 가져옴
+            // childNodes : 해당하는 자식의 태그들과 node들(#text)을 가져옴
+            let moveE = document.querySelector("fieldset").children[1];
+            let addE = document.body;
+
+            addE.appendChild(moveE);
+        }
+        let cnt3 = 0;
+        function addTest(){
+            cnt3++;
+            let div = document.createElement("div");
+            div.textContent = "dom test " + cnt3;
+
+            document.getElementById("test01").appendChild(div);
+        }
+        function moveTest(){
+            let test01chil = document.querySelector("#test01").children[0];
+
+            document.getElementById("test02").appendChild(test01chil);
+            test01chil.style.color = 'red';
+        }
+    </script>
+</head>
+<body>
+    <h1>태그 추가하기</h1>
+    <button onclick="addAppend();">appendChild()</button>
+    <button onclick="addBefore();">insertBefore()</button>
+    <button onclick="moveEle();">appendChild를 이용한 엘리먼트 이동</button>
+
+    <fieldset id="addele">
+        <legend>태그태그</legend>
+        <div>div태그</div>
+    </fieldset>
+
+    <h3>문제 1 : test01태그에 "dom test"라는 내용을 가진 div태그 추가해보자.
+        <button onclick="addTest();">클릭</button>
+    </h3>
+    <h3>문제 2 : test01태그에 추가된 태그들을 test02로 이동시켜보자.
+        <button onclick="moveTest();">클릭!</button>
+    </h3>
+
+    *test01
+    <div id="test01">[1]</div>
+    *test02
+    <div id="test02">[2]</div>
+    
+</body>
+</html>

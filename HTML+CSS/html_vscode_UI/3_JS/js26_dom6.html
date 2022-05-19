@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom(Document Object Model)06</title>
+    <script>
+        function tableVal(){
+            // forms : form태그의 요소를 가져온다
+            let doc = document.forms[0];
+            // doc.id.value : form태그 안에 id라는 이름의 value 값을 가져온다.
+            let vals = [doc.id.value, doc.pw.value, doc.addr.value, doc.phone.value];
+
+            for(let i=0; i<vals.length; i++){
+                if( vals[i] == null || vals[i] == "" || vals[i] == undefined ){
+                    alert("모두 입력해 주세요");
+
+                }
+            }
+            // id가 addtr인 createRow(vals)를 추가하겠다.
+            document.getElementById("addtr").appendChild(createRow(vals));
+        }
+
+        function createRow(vals){
+            let tr = document.createElement("tr");
+
+            for(let i=0; i<vals.length; i++){
+                let td = document.createElement("td");
+                td.textContent = vals[i];
+                tr.appendChild(td);
+            }
+            
+            let dtd = document.createElement("td");
+            // this : 현재 이벤트가 진행된 태그를 말함
+            dtd.innerHTML = "<input type='button' value='삭제' onclick='delRow(this);'>";
+
+            tr.appendChild(dtd);
+            tr.style.textAlign = 'center';
+
+            return tr;
+        }
+
+        function deleteVal(){
+            let tbody = document.getElementById("addtr");
+
+            if (confirm("정말 삭제하시겠습니까??") == true){
+                // 자식 요소들 중에서 마지막 요소를 삭제하겠다.
+                // lastChild : 마지막 자식
+                tbody.removeChild(tbody.lastChild);
+            }else {
+                return false;
+            }
+        }
+
+        function delRow(tdBtn){
+            // tdBtn : 삭제 버튼 의미
+            // tdBtn.parentNode.parentNode : tdBtn의 부모의 부모 태그를 가르킴
+            let delTr = tdBtn.parentNode.parentNode;
+
+            if (confirm("정말 삭제하시겠습니까??") == true){
+                document.getElementById("addtr").removeChild(delTr);
+            }else {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table id="intable">
+            <tr>
+                <td>I  D</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td>P  W</td>
+                <td><input type="text" name="pw"></td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td><input type="text" name="addr"></td>
+            </tr>
+            <tr>
+                <td>PHONE</td>
+                <td><input type="text" name="phone"></td>
+            </tr>
+        </table>
+        <input type="button" value="추가" onclick="tableVal();">
+        <input type="button" value="삭제" onclick="deleteVal();">
+    </form>
+    <hr>
+    <div id="addtable">
+        <table border="1" id="ctb">
+            <col width="100px">
+            <col width="100px">
+            <col width="300px">
+            <col width="100px">
+            <col width="100px">
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>비밀번호</th>
+                    <th>주소</th>
+                    <th>전화번호</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody id="addtr">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

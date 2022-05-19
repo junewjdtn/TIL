@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <h1>event</h1>
+    <h3>고전 이벤트 모델(기본)</h3>
+    <p>요소가 가지는 이벤트 속성에 핸들러를 연결하는 방법</p>
+    <button id="btn1">클릭!</button>
+    <button id="btn2">클릭!!</button>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        btn1.onclick = function(){
+            alert("btn1이 클릭 되었습니다.");
+        }
+
+        document.getElementById("btn2").onclick=(e)=>{
+            alert("btn2이 클릭 되었습니다.");
+            console.log(e);
+            // window.event.target : 현재 이벤트가 활성화를 시킨 태그를 가져옴
+            console.log(window.event.target);
+            console.log(e.target);
+            
+            btn1.onclick=null;
+        }
+    </script>
+    <h3>인라인 이벤트 모델</h3>
+    <p>요소 내부에 이벤트 속성으로써 실행할 내용을 작성하는 방식</p>
+    <button onclick="test1();">클릭</button>
+    <script>
+        function test1(){
+            alert("인라인 이벤트 모델");
+        }
+    </script>
+
+    <h3>표준 이벤트 모델(addEventListener)</h3>
+    <button id="btn3">클릭</button>
+    <script>
+        let btn3 = document.getElementById("btn3");
+
+        // addEventListener('1','2') : '1' = 언제 실행할 것인가 '2' = 어떻게 처리할 것인가
+        // btn3가 "click"되었을때 'alert("표준 이벤트 모델");'를 실행하겠다. 
+        btn3.addEventListener("click", function(){
+            alert("표준 이벤트 모델");
+        });
+        btn3.addEventListener("mouseenter", function(e){
+            alert("마우스 엔터");
+            console.log(e);
+        });
+    </script>
+</body>
+</html>
