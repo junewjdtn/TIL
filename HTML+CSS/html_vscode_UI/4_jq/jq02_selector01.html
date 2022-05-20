@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector01</title>
+    <script src="jQuery_JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("div:eq(0)") == $("div").eq(0) 같은 의미
+            $("div:eq(0)").css({"border":"1px solid red", "width":"400px", "height":"200px"});
+            // id가 view인 태그에 border - 1px solid blue, 너비-400 높이-100
+            $("#view").css({"border":"1px solid blue", "width":"400px", "height":"100px"});
+        });
+
+        function a1(){
+            $("span").css("color", "red");
+            // .text() : 텍스트 입력 | 하위 항목을 포함하여 일치하는 요소 집합에서 각 요소의 결합된 텍스트 내용을 가져옵니다.
+            $("#view").text('$("span").css("color","red");');
+        }
+
+        function a2(){
+            // $ == jQuery 같은 의미
+            jQuery("#t1").css("color", "blue");
+            jQuery("#view").text('jQuery("#t1").css("color","blue");');
+        }
+
+        function a3(){
+            $(".t2").css("color","hotpink");
+            $("#view").text('$(".t2").css("color","hotpink");');
+        }
+
+        function a4(){
+            $("li span").css("color", "violet");
+            $("#view").text('$("li span").css("color", "violet");');
+        }
+
+        function a5(){
+            $("li > b > span").css("color", "skyblue");
+            $("#view").text('$("li > span").css("color", "skyblue");');
+        }
+
+        function a6(){
+            // :nth-child(n) : 부모의 n번째 자식인 모든 요소를 ​​선택합니다.
+            // :nth-child(odd) : 부모의 홀수번째 자식인 모든 요소를 ​​선택합니다.
+            // :nth-child(even) : 부모의 짝수번째 자식인 모든 요소를 ​​선택합니다.
+            $("li:nth-child(even)").css("background-color", "yellow");
+            $("#view").text('$("li:nth-child(even)").css("background-color", "yellow");');
+        }
+
+        function a7(){
+            // :first-child : 부모의 첫 번째 자식인 모든 요소를 ​​선택합니다.
+            $("li:first-child").css("background-color", "lightgray");
+            $("#view").text('$("li:first-child").css("background-color", "lightgray");');
+        }
+
+        function a8(){
+            // :last-child : 부모의 마지막 자식인 모든 요소를 ​​선택합니다.
+            $("li:last-child").css("background-color","lime");
+            $("#view").text('$("li:last-child").css("background-color","lime");');
+        }
+    </script>
+</head>
+<body>
+    <h1>selector 표현식</h1>
+    <div>
+        <ul>
+            <li><span>tag로 선택하기</span></li>
+            <li id="t1">id로 선택하기</li>
+            <li class="t2">class로 선택하기</li>
+            <li><span>parent child로 선택하기</span></li>
+            <li><b><span>parent &gt; child</span></b>로 선택하기</li>   <!-- &gt; : >  -->
+            <li>:nth-child(n/odd/even)로 선택하기</li>
+            <li>:first-child로 선택하기</li>
+            <li>:last-child로 선택하기</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <button onclick="a1();">태그선택(span)</button>
+        <button onclick="a2();">id선택(t1)</button>
+        <button onclick="a3();">class선택(t2)</button>
+        <button onclick="a4();">p c 선택</button>
+        <button onclick="a5();">p &gt; c 선택</button>
+        <button onclick="a6();">nth-child 선택</button>
+        <button onclick="a7();">first-child 선택</button>
+        <button onclick="a8();">last-child 선택</button>
+    </div>
+    <br>
+    <div id="view"></div>
+</body>
+</html>
