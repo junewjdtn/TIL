@@ -28,3 +28,5 @@
   https://docs.oracle.com/javase/8/docs/api/
 - HTML, CSS, JavaScript DOCS :
   https://developer.mozilla.org/ko/docs/Web/HTML
+- Jquery DOC :
+  https://api.jquery.com/
