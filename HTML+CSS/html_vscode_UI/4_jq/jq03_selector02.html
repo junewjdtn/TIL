@@ -13,11 +13,13 @@
     </style>
     <script src="jQuery_JS/jquery-3.6.0.min.js"></script>
     <script>
+
         function resiezeImg(){
             $("img").css({"width":"200px", "height":"200px"});
         }
 
         function idSelector(){
+            // id 속성은 중복이 되더라도 이벤트를 주게되면 딱 한개만 이벤트가 적용되기 때문에 한개만 바뀜
             $("#selId").hide();
         }
 
@@ -28,7 +30,8 @@
 
         function propSelector(){
             // .slideUp() : 슬라이딩 동작으로 일치하는 요소를 숨깁니다.
-            $("img:eq(1)").slideUp();
+            // [title*=02] : '02'를 포함하고 있는 'title'을 선택한다.
+            $("img[title*=02]").slideUp();
         }
 
         function changeImg(){
