@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertion02</title>
+    <style>
+        div{border: 1px solid blue;}
+    </style>
+    <script src="jQuery_JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("button:eq(0)").click(function(){
+                // .after() : 선택한 요소 뒤에 매개변수로 지정된 내용을 삽입합니다.
+                $("#base").after("<div>새로운 엘리먼트(after)</div>");
+            });
+            
+            $("button:eq(1)").click(function(){
+                // .inserAfter() : 새로운 <div>태그를 '#base'뒤에 추가하겠다.
+                $("<div>새로운 엘리먼트(insertAfter)</div>").insertAfter("#base");
+            });
+            
+            $("button:eq(2)").click(function(){
+                // .before() : 선택한 요소 앞에 지정된 내용을 삽입함
+                $("#base").before("<div>새로운 엘리먼트(before)</div>");
+            });
+            
+            $("button:eq(3)").click(function(){
+                // .inserBefore() : 새로운 <div>태그를 '#base'뒤에 추가하겠다.
+                $("<div>새로운 엘리먼트(insertBefore)</div>").insertBefore("#base");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>after()</button>
+    <button>insertAfter()</button>
+    <button>before()</button>
+    <button>insertBefore()</button>
+
+
+    <div id="base">
+        <p>삽입</p>
+    </div>
+</body>
+</html>

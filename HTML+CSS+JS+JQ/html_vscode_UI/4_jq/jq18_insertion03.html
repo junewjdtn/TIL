@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertion03</title>
+    <style>
+        #menu{
+            background-color: orange;
+            text-align: right;
+        }
+        a{
+            text-decoration: none;
+            font-size: 20px;
+        }
+        #menu div{
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .box{border: 2px solid red;}
+    </style>
+    <script src="jQuery_JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // .wrap() : 선택한 요소를 이력한 내용으로 감싸겠다.
+            // $("pre").wrap("<b></b>");
+            // .wrapInner() : 선택한 요소 안의 내용을 입력한 내용으로 감싸겠다.
+            // $("pre").wrapInner("<b></b>");
+            // .wrapAll() : 선택한 요소를 입력한 내용으로 모두 감싸겠다.
+            // pre태그 중간에 다른 태그가 들어가면 pre태그를 모두 출력하고 추가된 태그가 출력된다.
+            $("pre").wrapAll("<b></b>");
+            
+            let $box = $("<div>").addClass("box");
+            $(".sub_menu:first").wrap($box);
+
+            $(".sub_menu").click(function(){
+
+                $(".sub_menu").each(function(){
+                    if($(this).parent(".box")){
+                        // unwrap() : 감싼것을 벗겨버린다.
+                        $(this).unwrap(".box");
+                    }
+                });
+
+                $(this).wrap($box);
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="menu">
+        <div class="sub_menu">
+            <a href="#"><span>쇼핑</span></a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">뉴스</a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">카페</a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">영화</a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">웹툰</a>
+        </div>
+    </div>
+
+    <pre>a</pre>
+    <pre>b</pre>
+    <pre>c</pre>
+    <a>1</a>
+    <pre>d</pre>
+</body>
+</html>
