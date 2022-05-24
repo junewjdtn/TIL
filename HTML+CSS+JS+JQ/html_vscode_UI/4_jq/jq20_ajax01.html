@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style type="text/css">
+	*{margin: 0px; padding:0px;}
+	table{width:400px;}
+	fieldset{width: 400px;}
+	body{width: 1000px; margin:50px auto;}
+	table tr:nth-child(odd){background-color:orange;}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#emp_search").click(function(){
+			let empid = $("input[name=empid]").val();
+			
+			/* 검색한 'empid'가 숫자가 아니고 3글자 이상일 때 */
+			if(!isNaN(empid) && empid.length>2){
+				
+				/* ajax 사용법 : $.ajax({ a:b, c:d, e:f}); */
+				$.ajax({
+					url:"emplist.xml",			// 전송(통신)할 주소
+					method:"get",				// 서버에 전송하는 방식
+					// data:{id:mainId},		// 서버에 전송할 데이터
+					dataType:"xml",				// 전송받을 데이터 타입(xml, json...)
+					/* function(data) => 가져올 데이터를 매개변수 'data'로 넣어줌 */
+					success: function(data){	// 통신에 성공했을 때 실행
+						let empInfo = $(data).find("EMPLOYEE_ID:contains(" + empid + ")").parent();
+						
+						if(empInfo.is("ROW")){
+							$("table input").each(function(i){
+								$(this).val( $(empInfo).children().eq(i).text() );
+							});
+						}else{
+							alert("검색 대상이 존재하지 않습니다.");
+						}
+					},
+					error: function(){			// 통신에 실패했을 때 실행
+						alert("error : 통신 실패");
+					}
+				});
+			}else {
+				alert("사원번호를 제대로 입력해 주세요!");
+			}
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<h1>데이터 가져오기</h1>
+	<fieldset>
+		<legend>사원정보 조회</legend>
+		<input type="text" name="empid">
+		<input type="button" id="emp_search" value="조회">
+	</fieldset>
+	<table>
+		<tr>
+			<th>사원번호</th>
+			<td><input type="text" name="empNum"></td>
+		</tr>
+		<tr>
+			<th>이  름</th>
+			<td><input type="text" name="lastName"></td>
+		</tr>
+		<tr>
+			<th>이 메 일</th>
+			<td><input type="text" name="email"></td>
+		</tr>
+		<tr>
+			<th>전화번호</th>
+			<td><input type="text" name="phone"></td>
+		</tr>
+		<tr>
+			<th>입 사 일</th>
+			<td><input type="text" name="hire"></td>
+		</tr>
+	</table>
+
+</body>
+</html>
