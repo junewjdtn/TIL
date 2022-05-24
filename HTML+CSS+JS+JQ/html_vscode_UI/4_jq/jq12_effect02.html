@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>effect02</title>
+    <style>
+        #box{
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+    <script src="jQuery_JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("a").click(function(){
+                $("#box").animate({"opacity":"0.2", "left":"400px"}, 1000)
+                          // slow : 600ms = 0.6s | fast : 200ms = 0.2s | default : 400ms = 0.4s
+                         .animate({"opacity":"0.4", "top":"160px", "width":"20px", "height":"20px"}, "slow")
+                         .animate({"opacity":"1", "left":"0px", "width":"100px", "height":"100px"}, "fast")
+                         .animate({"top":"0px",}, "default")
+                         .slideUp().slideDown().fadeOut().fadeIn();
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <p><a href="#">Run</a></p>
+    <div id="box"></div>
+</body>
+</html>

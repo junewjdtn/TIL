@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace</title>
+    <script src="jQuery_JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("button:first").click(function(){
+                // .replaceWith() : 선택한 엘리먼트'$("p")를 '.replaceWith("<b>replaceWith</b>")'로 바꾸겠다.
+                $("p").replaceWith("<b>replaceWith</b>");
+            });
+
+            $("button:last").click(function(){
+                // .replaceAll() : 선택한 엘리먼트'.replaceAll("p")'를 '$("<b>replaceAll</b>")'로 바꾸겠다.
+                $("<b>replaceAll</b>").replaceAll("p");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>DOM 대체</p>
+        <p>DOM 대체</p>
+    </div>
+
+    <button>바꾸기(replaceWith)</button>
+    <button>바꾸기(replaceAll)</button>
+</body>
+</html>

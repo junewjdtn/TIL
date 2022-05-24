@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        div {
+            border: 1px solid red;
+            width: 400px;
+            height: 200px;
+            padding: 20px;
+            overflow: auto;
+        }
+        div p:first-child{
+            float: left;
+            border: 1px solid blue;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+        }
+        div p:last-child{
+            float: right;
+            border: 1px solid blue;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+        }
+    </style>
+    <script src="jQuery_JS/jquery-3.6.0.min.js"></script>
+    <script>
+        /*
+            이벤트 전파 : 요소들이 서로 포함관계인 경우 요소중 하나의 이벤트가 발생하면
+                         중첩이된 요소들도 이벤트가 전파 됨
+
+            이벤트 전파 막기
+            [1] stopPropagation() : 이벤트 전파 막기
+            [2] preventDefault()  : 이벤트에 의한 해당 기본동작 막기
+            [3] return false      : stopPropagtion()과 preventDefault()의 기능을 합쳐 놓음
+                                    이벤트 전파 막고, 이벤트에 의한 해당 기본동작 막기
+        */
+        $(function(){
+            $("a:eq(0)").click(function(e){
+                alert("a클릭!");
+                // e.stopPropagation();
+                // e.preventDefault();
+                return false;
+            });
+            
+            $("p").click(function(){
+                alert("p클릭!");
+            });
+
+            $("div").click(function(){
+                alert("div클릭!");
+            });
+
+            // .bind() : 요소에 대한 이벤트에 핸들러를 연결합니다.
+            $("a:eq(1)").bind({
+                "mouseover":function(){
+                    $(this).css("background-color", "pink");
+                }, 
+                "mouseout":function(){
+                    $(this).css("background-color", "skyblue");
+                }
+            });
+            // mouseover : 마우스를 올려놓았을 때
+            // $("a:eq(1)").bind("mouseover", function(){
+            //     $(this).css("background-color", "pink");
+            // });
+            // mouseout : 마우스를 올려놓지 않았을 때
+            // $("a:eq(1)").bind("mouseout", function(){
+            //     $(this).css("background-color", "skyblue");
+            // });
+            
+            $("button").click(function(){
+                $("body").append("<p>새로 추가된 p태그</p>");
+            });
+
+            /*
+                .on( events, [ selector ], [ data ] )  
+                : 하나 이상의 이벤트에 대한 이벤트 핸들러 함수를 선택한 요소에 연결합니다.
+                (이벤트로 생성한 태그에 대해 이벤트를 주고 싶을 때 사용)
+            */ 
+            $("body").on("click", "> p", function(){
+                alert("새로 추가된 요소도 이벤트 적용가능");
+            });
+
+            $("span").click(function(){
+                alert("span클릭!");
+                // .unbind() : 요소에 대한 이벤트에 핸들러를 연결해제 합니다.
+                $("a:eq(1)").unbind();
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>
+            <a href="https://www.naver.com">클릭</a>
+        </p>
+        <p>
+            클릭!
+        </p>
+    </div>
+    <div>
+        <p>
+            <a href="https://www.google.com">클릭</a>
+        </p>
+        <p>
+            클릭!
+        </p>
+    </div>
+    <span>이벤트 해제</span>
+    <button>버튼클릭!</button>
+</body>
+</html>
