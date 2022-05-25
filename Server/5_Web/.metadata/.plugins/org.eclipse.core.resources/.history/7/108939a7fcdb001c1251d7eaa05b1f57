@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<% request.setCharacterEncoding("UTF-8"); %>
+<% response.setContentType("text/html; charset=UTF-8"); %>
+
+<%@ page import="com.my.dao.MyBoardDao" %>
+<%@ page import="com.my.dto.MyBoardDto" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selectone.jsp</title>
+</head>
+<body>
+<%
+	/* myno의 값을 가져 옴 (무조건 String 타입으로 넘어옴)*/
+	/* Integer.parseInt를 사용하여 타입을 바꾸어 줌 */
+	int myno = Integer.parseInt(request.getParameter("myno"));
+	MyBoardDao dao = new MyBoardDao();
+	MyBoardDao dto = dao.selectOne()(myno);
+%>
+
+</body>
+</html>
