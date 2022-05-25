@@ -4,6 +4,7 @@
 - [Java_TIL](https://github.com/junewjdtn/TIL/tree/master/TIL_md/Java)
 - [JavaScript_TIL](https://github.com/junewjdtn/TIL/tree/master/TIL_md/JS)
 - [JQuery_TIL](https://github.com/junewjdtn/TIL/tree/master/TIL_md/JQuery)
+- [JSP_TIL](https://github.com/junewjdtn/TIL/tree/master/TIL_md/JSP)
 
 # 내용정리
 
