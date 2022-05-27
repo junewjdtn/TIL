@@ -1,18 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        
+    
 <% request.setCharacterEncoding("UTF-8"); %>
 <% response.setContentType("text/html; charset=UTF-8"); %>
-
-<%@ page import="com.multi.dao.MDBoardDao" %>
-<%@ page import="com.multi.dto.MDBoardDto" %>
-<%@ page import="java.util.List" %>
+    
+<%@page import="com.mvc.dto.MVCBoardDto"%>
+<%@page import="java.util.List"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>board list Page</title>
+<title>BoardList Page</title>
 <style>
 	a{text-decoration: none;}
 </style>
@@ -38,20 +37,13 @@
 </head>
 <body>
 <%
-	MDBoardDao dao = new MDBoardDao();
-	List<MDBoardDto> list = dao.selectAll();
+	List<MVCBoardDto> list = (List<MVCBoardDto>)request.getAttribute("allList");
 %>
-<!-- 컴파일할때 파일을 실행함 -->
-<%@ include file="./form/header.jsp" %>
-	
 	<h1>글 목록</h1>
-	<form id="muldelform" action="muldel.jsp" method="post">
+	<form id="muldelform" action="mycontroller.jsp" method="post">
+		<input type="hidden" name="command" value="muldel">
 		<table border=1>
-			<col width="30px">
-			<col width="50px">
-			<col width="100px">
-			<col width="300px">
-			<col width="100px">
+			<col width="30px"><col width="50px"><col width="100px"><col width="300px"><col width="100px">
 			<tr>
 				<th><input type="checkbox" name="all" onclick="allChk(this.checked);"></th>
 				<th>NO</th>
@@ -67,13 +59,13 @@
 			</tr>
 <%
 			} else {
-				for(MDBoardDto dto : list){
+				for(MVCBoardDto dto : list){
 %>
 			<tr align="center">
 				<td><input type="checkbox" name="chk" value="<%=dto.getSeq()%>"></td>
 				<td><%=dto.getSeq() %></td>
 				<td><%=dto.getWriter() %></td>
-				<td><a href="boarddetail.jsp?seq=<%=dto.getSeq() %>"><%=dto.getTitle() %></a></td>
+				<td><a href="mycontroller.jsp?command=boarddetail&seq=<%=dto.getSeq() %>"><%=dto.getTitle() %></a></td>
 				<td><%=dto.getRegdate() %></td>
 			</tr>
 <%					
@@ -81,15 +73,17 @@
 			}
 %>
 			<tr>
-				<td colspan="4">
+				<td colspan="2" align="center">
 					<input type="submit" value="삭제">
 				</td>
-				<td align="right">
-					<input type="button" value="글쓰기">
+				<td colspan="2">
+				</td>
+				<td align="center">
+					<input type="button" value="글쓰기" onclick="location.href='mycontroller.jsp?command=boardinsertform'">
 				</td>
 			</tr>
 		</table>
 	</form>
-<%@ include file="./form/footer.jsp" %>
 </body>
+</head>
 </html>

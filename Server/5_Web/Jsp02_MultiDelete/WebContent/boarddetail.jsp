@@ -20,6 +20,8 @@
 	MDBoardDao dao = new MDBoardDao();
 	MDBoardDto dto = dao.selectOne(seq);
 %>
+<%@ include file="./form/header.jsp" %>
+
 	<div id="detailform">
 		<h1>게시글 보기</h1>
 		<table border="1">
@@ -53,6 +55,6 @@
 		</table>
 	</div>
 
-
+<%@ include file="./form/footer.jsp" %>
 </body>
 </html>
