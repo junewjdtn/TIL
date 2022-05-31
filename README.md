@@ -11,6 +11,7 @@
 - [Java](https://github.com/junewjdtn/TIL/tree/master/Java)
 - [SQL_dbeaver](https://github.com/junewjdtn/TIL/tree/master/DB/SQL_dbeaver)
 - [Typora](https://github.com/junewjdtn/TIL/tree/master/Typora)
+- [Notion](https://github.com/junewjdtn/TIL/blob/master/Notion/TIL_Notion.md)
 - [Git](https://github.com/junewjdtn/TIL/tree/master/git)
 - [HTML5](https://github.com/junewjdtn/TIL/tree/master/HTML%2BCSS/html_vscode_UI/1_html)
 - [CSS](https://github.com/junewjdtn/TIL/tree/master/HTML%2BCSS/html_vscode_UI/2_css)
