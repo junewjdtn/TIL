@@ -103,13 +103,40 @@
 			alert("회원가입 완료");
 			location.href="index.jsp";
 		</script>
-<%
-			
+<%	
 		}else {
 %>
 		<script type="text/javascript">
 			alert("회원가입 실패");
 			location.href="logincontroller.jsp?command=registform";
+		</script>
+<%
+		}
+	} else if(command.equals("updateroleform")){
+		int myno = Integer.parseInt(request.getParameter("myno"));
+		
+		MyMemberDto dto = dao.selectOne(myno);
+		
+		request.setAttribute("selectone", dto);
+		pageContext.forward("updateroleform.jsp");
+	} else if(command.equals("updaterole")){
+		int myno =Integer.parseInt(request.getParameter("myno"));
+		String myrole = request.getParameter("myrole");
+		
+		int res = dao.updateRole(myno, myrole);
+		
+		if(res>0){
+%>
+		<script type="text/javascript">
+			alert("회원 등급 변경 완료");
+			location.href="logincontroller.jsp?command=userlistall";
+		</script>
+<%
+		}else {
+%>
+		<script type="text/javascript">
+			alert("회원 등급 변경 실패");
+			location.href="logincontroller.jsp?command=updateroleform&myno=<%=myno %>";
 		</script>
 <%
 		}
