@@ -1,0 +1,13 @@
+package com.test06;
+
+public class Developer {
+	
+	private Emp emp;
+	private String dept;
+
+	@Override
+	public String toString() {
+		return super.toString() + " Developer [dept=" + dept + "]";
+	}
+	
+}
