@@ -40,7 +40,6 @@
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.9.7</version>
-			<scope>runtime</scope>
 		</dependency>
 		
 		<!-- aspectjrt -->
@@ -49,7 +48,6 @@
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>1.9.7</version>
-			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 </project>

@@ -5,7 +5,26 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 	
-	<aop:aspectj-autoproxy/>
 	<!-- width : 3 / height : 5 -->
+	<bean id="rect" class="com.edu.entity.Rectangle">
+		<constructor-arg value="사각형"/>
+		<constructor-arg value="3"/>
+		<constructor-arg value="5"/>
+	</bean>
+	<bean id="tri" class="com.edu.entity.Triangle">
+		<property name="title" value="삼각형"/>
+		<property name="width" value="3"/>
+		<property name="height" value="5"/>
+	</bean>
+	
+	<bean id="myAspect" class="com.edu.aop.MyAspect"/>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* viewSize())" id="viewPoint"/>
+		<aop:aspect ref="myAspect">
+			<aop:before method="before" pointcut-ref="viewPoint"/>
+			<aop:after method="after" pointcut-ref="viewPoint"/>
+		</aop:aspect>
+	</aop:config>
 
 </beans>
