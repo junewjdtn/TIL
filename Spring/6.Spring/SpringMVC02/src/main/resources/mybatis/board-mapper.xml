@@ -23,4 +23,12 @@
 		INSERT INTO MYBOARD VALUES(NULL, #{myname}, #{mytitle}, #{mycontent}, NOW())
 	</insert>
 	
+	<update id="update" parameterType="boardDto">
+		UPDATE MYBOARD SET MYTITLE=#{mytitle}, MYCONTENT=#{mycontent} WHERE MYNO=#{myno}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM MYBOARD WHERE MYNO=#{myno}
+	</delete>
+	
 </mapper>
